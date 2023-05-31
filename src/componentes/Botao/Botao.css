@@ -1,0 +1,5 @@
+.botao {
+  padding: 1.5rem 3rem;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #50b7dc 0%, #470eba 100%);
+}

@@ -1,0 +1,148 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 4rem 9%;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "poppins", sans-serif;
+  z-index: 1;
+}
+
+.header .logo {
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 600;
+  background-image: linear-gradient(90deg, #50b7dc 0%, #470eba 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header .navbar a {
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin-left: 3.5rem;
+  color: white;
+}
+
+.header .navbar a:hover,
+.header .navbar a.active {
+  color: var(--color-two);
+  transition: 0.3s;
+}
+
+.header .navbar a:nth-child(5) {
+  color: #ffffff;
+}
+
+.header #menu-icon {
+  color: white;
+  font-size: 3.6rem;
+  cursor: pointer;
+  display: none;
+}
+
+section {
+  min-height: 100vh;
+  padding: 10rem 9% 2rem;
+}
+
+.home {
+  padding: 15rem 9%;
+  background-image: url("../imagens/banner6.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.home .home-conteudo {
+  max-width: 80rem;
+}
+
+.home-conteudo h2 {
+  font-family: "poppins", sans-serif;
+  font-weight: 600;
+  font-size: 2vw;
+  color: rgba(135, 138, 153, 0.5);
+  line-height: 1;
+}
+
+.home-conteudo h1 {
+  font-family: "Cinzel", serif;
+  font-size: 6vw;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 7rem;
+  position: relative;
+}
+
+h1 .out {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-block;
+  position: relative;
+}
+h1 .in {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-block;
+  background-color: var(--color-two);
+  position: absolute;
+  top: 50%;
+  left: 10px;
+}
+.home a {
+  color: #ffffff;
+  font-family: "poppins", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding: 4rem 4%;
+  }
+
+  .home {
+    padding: 15rem 4%;
+  }
+}
+
+@media (max-width: 848px) {
+  .header #menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: -1000px;
+    left: 0;
+    width: 100%;
+    padding: 1rem 4% 1rem 0;
+    background-color: var(--color-one);
+    transition: 0.4s;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 1rem;
+    margin: 3rem 0;
+  }
+
+  .navbar a:nth-child(5) {
+    text-align: center;
+  }
+
+  .home a {
+    font-size: 1.5rem;
+  }
+}
