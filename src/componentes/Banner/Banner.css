@@ -129,7 +129,7 @@ h1 .in {
     width: 100%;
     padding: 1rem 4% 1rem 0;
     background-color: var(--color-one);
-    transition: 0.4s;
+    transition: 0.3s;
   }
 
   .navbar a {

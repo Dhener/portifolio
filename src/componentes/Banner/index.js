@@ -1,37 +1,39 @@
 import "./Banner.css";
 import Botao from "../Botao";
+import { useRef } from "react";
 
 const Banner = () => {
+  const menuButton = useRef();
+  const navBar = useRef();
+  const header = useRef();
+
   const efeito = () => {
     let navlinks = document.querySelectorAll("header nav a");
     navlinks.forEach((links) => {
       links.classList.remove("active");
       document.querySelector("header nav a").classList.add("active");
-      header.style.backgroundColor = "transparent";
-      navbar.style.top = "-1000px";
-      menuIcon.classList.toggle("bx-x");
-      navbar.classList.toggle("active");
+      header.current.style.backgroundColor = "transparent";
+      navBar.current.style.top = "-1000px";
+      menuButton.current.classList.toggle("bx-x");
+      navBar.current.classList.toggle("active");
     });
   };
 
-  let menuIcon = document.querySelector("#menu-icon");
-  let navbar = document.querySelector("nav");
-  let header = document.querySelector(".header");
   function animationMenuIcon() {
-    menuIcon.classList.toggle("bx-x");
-    navbar.classList.toggle("active");
-    if (menuIcon.classList.contains("bx-x")) {
-      header.style.backgroundColor = "var(--color-one)";
-      navbar.style.top = "100%";
+    menuButton.current.classList.toggle("bx-x");
+    navBar.current.classList.toggle("active");
+    if (menuButton.current.classList.contains("bx-x")) {
+      header.current.style.backgroundColor = "var(--color-one)";
+      navBar.current.style.top = "100%";
     } else {
-      header.style.backgroundColor = "transparent";
-      navbar.style.top = "-1000px";
+      header.current.style.backgroundColor = "transparent";
+      navBar.current.style.top = "-1000px";
     }
   }
 
   return (
     <>
-      <header className="header">
+      <header ref={header} className="header">
         <a href="#" className="logo">
           D&M.
         </a>
@@ -39,8 +41,9 @@ const Banner = () => {
           onClick={animationMenuIcon}
           className="bx bx-menu"
           id="menu-icon"
+          ref={menuButton}
         ></div>
-        <nav className="navbar">
+        <nav ref={navBar} className="navbar">
           <a onClick={efeito} href="#home" className="active">
             HOME
           </a>
